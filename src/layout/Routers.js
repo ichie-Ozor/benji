@@ -3,12 +3,13 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import PageLoader from '../component/loader/PageLoader';
 import ErrorBoundary from './ErrorBoundary';
 import HomeLayout from './HomeLayout';
-import Signin from '../component/Signin';
+import Home from '../component/Home';
+// import Signin from '../component/Signin';
 
 
-const Event = lazy(() => import('../component/Event'));
-const Manual = lazy(() => import('../component/Manual'))
-const CreateBio = lazy(() => import('../component/CreateBio'))
+// const Event = lazy(() => import('../component/Event'));
+// const Manual = lazy(() => import('../component/Manual'))
+// const CreateBio = lazy(() => import('../component/CreateBio'))
 
 const isAuthenticated = () => {
     return !!localStorage.getItem('token')
@@ -16,13 +17,14 @@ const isAuthenticated = () => {
 
 const router = createBrowserRouter(
     [
+        // {
+        //     path: '/',
+        //     // element: <Signin />,
+        //     errorElement: <ErrorBoundary />,
+        // },
         {
+            // path: '/home',
             path: '/',
-            element: <Signin />,
-            errorElement: <ErrorBoundary />,
-        },
-        {
-            path: '/home',
             element: <HomeLayout />,
             errorElement: <ErrorBoundary />,
             // loader: () => {
@@ -32,10 +34,11 @@ const router = createBrowserRouter(
             //     return null;
             // },
             children: [
-                { path: 'create-bio', element: <CreateBio /> },
-                { path: 'event', element: <Event /> },
-                { path: 'manual', element: <Manual /> },
-                { index: true, element: <Navigate to='create-bio' replace /> },
+                // { path: 'create-bio', element: <CreateBio /> },
+                { path: 'home', element: <Home /> },
+                // { path: 'event', element: <Event /> },
+                // { path: 'manual', element: <Manual /> },
+                { index: true, element: <Navigate to='home' replace /> },
                 { path: '*', element: <Navigate to='/' replace /> }
             ]
         }]
