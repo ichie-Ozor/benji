@@ -439,7 +439,7 @@ const renderCompany = () => {
                                     </div>
                                 )}
                             </div>
-                            <button className='w-full bg-[#144f9a] rounded-[8px] text-white text-[14px] py-2'>View Company Culture</button>
+                            <button className='w-full bg-[#144f9a] rounded-[8px] text-white text-[14px] py-2 mt-2'>View Company Culture</button>
                         </div>
                     )
                 })
@@ -455,7 +455,7 @@ const renderProfessionals = () => {
                 className='bg-white py-3 px-2 rounded-[8px] border-l-4 border-l-[#144f9a] mb-2'
             >
                 <div className='flex gap-4 w-full'>
-                    <div className='w-[44px] h-[44px] rounded-[8px] border-2 border-[#cfcfcf] bg-[#ededed] py-4 px-2 flex justify-center items-center'>
+                    <div className='w-[44px] h-[44px] rounded-full border-2 border-[#144f9a] bg-[#144f9a] py-4 px-2 flex justify-center items-center'>
                         <span className='font-[500] text-[14px] text-[#2a2a2a]'>{item.name.split(' ').map((word) => word.charAt(0)).join('')}</span>
                     </div>
                     <div className='w-[70%] flex flex-col justify-center items-start ml-4 mb-3'>
@@ -520,7 +520,7 @@ const renderProfessionals = () => {
                         </div>
                     )}
                 </div>
-                <button className='w-full bg-[#144f9a] rounded-[8px] text-white text-[14px] py-2'>Connect & Hire</button>
+                <button className='w-full bg-[#144f9a] rounded-[8px] text-white text-[14px] py-2 mt-2'>Connect & Hire</button>
             </div>
         ))
     )
